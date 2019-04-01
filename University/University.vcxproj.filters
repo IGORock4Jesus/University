@@ -17,6 +17,7 @@
     <ClInclude Include="console.h" />
     <ClInclude Include="fps.h" />
     <ClInclude Include="font.h" />
+    <ClInclude Include="resource_manager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entry_point.cpp" />
@@ -29,5 +30,6 @@
     <ClCompile Include="console.cpp" />
     <ClCompile Include="fps.cpp" />
     <ClCompile Include="font.cpp" />
+    <ClCompile Include="resource_manager.cpp" />
   </ItemGroup>
 </Project>

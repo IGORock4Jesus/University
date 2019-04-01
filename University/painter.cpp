@@ -89,7 +89,7 @@ void renderCamera(LPDIRECT3DDEVICE9 device, D3DXVECTOR2 position, D3DXVECTOR2 si
 }
 
 
-void drawDirectionLight(LPDIRECT3DDEVICE9 device, D3DXVECTOR3 direction, D3DCOLORVALUE color) {
+void renderDirectionLight(LPDIRECT3DDEVICE9 device, D3DXVECTOR3 direction, D3DCOLORVALUE color) {
 	D3DLIGHT9 light;
 	ZeroMemory(&light, sizeof(light));
 	D3DXVec3Normalize(&direction, &direction);
@@ -149,6 +149,22 @@ void renderSprite(LPDIRECT3DDEVICE9 device, D3DXVECTOR2 position, D3DXVECTOR2 si
 	device->SetTransform(D3DTS_WORLD, &m);
 	device->SetFVF(VERTEX_FORMAT);
 	device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, vs, VERTEX_SIZE);
+}
+
+void renderSprite(LPDIRECT3DDEVICE9 device, D3DXVECTOR2 position, D3DXVECTOR2 size, LPDIRECT3DTEXTURE9 texture)
+{
+	TexturedVertex vs[]{
+		   {{position.x, position.y, 0.0f}, {0.0f, 0.0f, 1.0f}, {0.0f, 0.0f}},
+		   {{position.x + size.x, position.y, 0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 0.0f}},
+		   {{position.x + size.x, position.y + size.y, 0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
+		   {{position.x, position.y + size.y, 0.0f}, {0.0f, 0.0f, 1.0f}, {0.0f, 1.0f}},
+	};
+	D3DXMATRIX m;
+	D3DXMatrixIdentity(&m);
+	device->SetTransform(D3DTS_WORLD, &m);
+	device->SetFVF(TEXTUREDVERTEX_FORMAT);
+	device->SetTexture(0, texture);
+	device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, vs, TEXTUREDVERTEX_SIZE);
 }
 
 

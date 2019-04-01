@@ -4,6 +4,8 @@
 //#include "trivial.h"
 
 
+void initialGame();
+
 void updateGame(float time);
 void renderGame(LPDIRECT3DDEVICE9 device, int width, int height);
 

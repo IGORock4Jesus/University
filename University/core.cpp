@@ -67,6 +67,8 @@ bool createRenderer() {
 	if (FAILED(direct3d->CreateDevice(0, D3DDEVTYPE_HAL, hwnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &pp, &device3d)))
 		return false;
 
+	device3d->SetRenderState(D3DRS_LIGHTING, FALSE);
+
 	return true;
 }
 void releaseRenderer() {
@@ -120,6 +122,7 @@ bool coreInitialize(HINSTANCE hinstance) {
 		return false;
 	if (!createInput(hinstance))
 		return false;
+	initialGame();
 	return true;
 }
 void coreRelease() {

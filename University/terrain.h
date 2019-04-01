@@ -11,11 +11,14 @@ enum class TerrainBusy {
 	forest, // лес
 };
 
+constexpr size_t TILE_COUNT = 2;
+
 // простое игровое поле
 struct Terrain : Component
 {
 	// 
-	TerrainBusy busyness[100][100]{ TerrainBusy::free };
+	TerrainBusy busyness[TILE_COUNT][TILE_COUNT]{ TerrainBusy::free };
+	float tileSize{ 100.0f };
 };
 
 

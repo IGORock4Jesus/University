@@ -142,6 +142,7 @@
     <ClInclude Include="fps.h" />
     <ClInclude Include="frustum.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="resource_manager.h" />
     <ClInclude Include="irenderable.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="painter.h" />
@@ -160,6 +161,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="painter.cpp" />
+    <ClCompile Include="resource_manager.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="terrain.cpp" />
   </ItemGroup>

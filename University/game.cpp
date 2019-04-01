@@ -7,7 +7,7 @@
 #include "scene.h"
 #include "console.h"
 #include "fps.h"
-
+#include "resource_manager.h"
 
 
 D3DXVECTOR2 cameraPosition;
@@ -21,6 +21,11 @@ float zoomChoose[]{
 rect viewport;
 
 
+
+void initialGame() {
+	loadTexture(getRenderDevice(), "ground", "..\\Resources\\Textures\\rocky_ground.png");
+}
+
 void updateGame(float time)
 {
 	updateFPS(time);
@@ -30,7 +35,7 @@ void renderGame(LPDIRECT3DDEVICE9 device, int width, int height)
 {
 	renderCamera(device, cameraPosition, getWindowSize() * zoomChoose[zoom]);
 
-	drawDirectionLight(device, { 0.1f, -0.1f, -0.9f }, { 1.0f, 1.0f, 1.0f, 1.0f });
+	renderDirectionLight(device, { 0.1f, -0.1f, -0.9f }, { 1.0f, 1.0f, 1.0f, 1.0f });
 
 	renderTerrain(device, terrain);
 

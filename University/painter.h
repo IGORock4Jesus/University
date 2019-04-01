@@ -14,7 +14,7 @@ void drawCamera(LPDIRECT3DDEVICE9 device, D3DXVECTOR3 position, D3DXVECTOR3 targ
 
 void renderCamera(LPDIRECT3DDEVICE9 device, D3DXVECTOR2 position, D3DXVECTOR2 size);
 
-void drawDirectionLight(LPDIRECT3DDEVICE9 device, D3DXVECTOR3 direction, D3DCOLORVALUE color);
+void renderDirectionLight(LPDIRECT3DDEVICE9 device, D3DXVECTOR3 direction, D3DCOLORVALUE color);
 
 
 void drawText(LPDIRECT3DDEVICE9 device, D3DXVECTOR2 position, D3DXVECTOR2 size, std::string text, D3DCOLOR color, int height = 16, LPCSTR family = "Consolas", DWORD format = DT_CENTER | DT_VCENTER);
@@ -24,5 +24,7 @@ void drawText(font *font, D3DXVECTOR2 position, D3DXVECTOR2 size, std::string te
 void draw3DText(LPDIRECT3DDEVICE9 device, std::string text, D3DXMATRIX transform);
 
 void renderSprite(LPDIRECT3DDEVICE9 device, D3DXVECTOR2 position, D3DXVECTOR2 size, D3DCOLOR color);
+
+void renderSprite(LPDIRECT3DDEVICE9 device, D3DXVECTOR2 position, D3DXVECTOR2 size, LPDIRECT3DTEXTURE9 texture);
 
 
